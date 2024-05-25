@@ -1,8 +1,9 @@
-
-export function Button(){
-    return{
+export function Button({children}) {
+    return(
         <>
-        <button></button>
+            <button>{children}</button>
         </>
-    }
+    )
+        
+    
 }

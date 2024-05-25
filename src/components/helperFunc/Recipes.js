@@ -1,12 +1,12 @@
- function Recipes (){
+ function Recipes ({recipe, onHandleAddRecipe, children}){
     return(
-        <div className="recipe">
+        <div className="recipe" key={recipe.id}>
             <span className="recipe_container">
-                <p>title</p>
+                <p className="recipe_name">{recipe.name}</p>
                 <div className="img_container">
-                    <img />
+                   <img src={recipe.img} alt="recipe" className="recipe_img"/>
                 </div>
-                
+                {children}
             </span>
         </div>
     )
