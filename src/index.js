@@ -3,14 +3,17 @@ import {createRoot} from 'react-dom/client';
 import './index.css';
 import App from './app/App';
 import store from './app/store';
+import { Provider } from 'react-redux';
 
 const root = createRoot(document.getElementById('root'));
 const render = () => {
   root.render(
-    <App 
-      state={store.getState()}
-      dispatch={store.dispatch}
-    />
+    <Provider  store={store}>
+      <App 
+        // state={store.getState()}
+        // dispatch={store.dispatch}
+      />
+    </Provider>
   )
 }
 store.subscribe(render);

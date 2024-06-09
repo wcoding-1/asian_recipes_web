@@ -1,7 +1,10 @@
-export function Button({children}) {
+export function Button({children, onHandleClick, icon}) {
     return(
         <>
-            <button>{children}</button>
+            <button onClick={onHandleClick}>
+                <img src={icon}/>
+                {children}
+            </button>
         </>
     )
         

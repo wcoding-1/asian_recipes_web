@@ -13,7 +13,7 @@ export const RemoveTermAction = ()=>{
     }
 }
 
-const initialSearchTerm = ''
+const initialSearchTerm = '';
 export const searchTermReducer = (state=initialSearchTerm, action)=>{
     switch(action.type){
         case 'searchTerm/setSearchTerm':{
@@ -30,3 +30,6 @@ export const searchTermReducer = (state=initialSearchTerm, action)=>{
     }
 
 }
+
+
+export const selectSearchTerm = (state)=> state.searchTerm;

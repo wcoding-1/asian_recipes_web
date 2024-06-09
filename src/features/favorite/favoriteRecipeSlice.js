@@ -7,31 +7,30 @@ export const favoriteAction = (recipe)=>{
     }
 }
 
-export const removeFavoriteAction = (recipe)=>{
+export const removeFavoriteAction = (selete)=>{
     return {
         type:'favoriteRecipe/removeFavorite',
-        payload: ''
+        payload: selete
     }
 }
-
-
 
 
 const initialFavorite = [];
 export const favoriteRecipeReducer = (favorites = initialFavorite, action)=>{
     switch (action.type) {
-        case 'favoriteRecipe/addFavoriteRecipe':{
+        case 'favoriteRecipe/addFavoriteRecipe':
             return [...favorites, action.payload]
 
-        }
+        
             
-        case 'favoriteRecipe/removeFavorite':{
-            return favorites.filter((favorite)=>favorite.id !== action.payload.id
-             
-             )
-        }
+        case 'favoriteRecipe/removeFavorite':
+            return favorites.filter((favorite)=>favorite.id !== action.payload.id)
+    
         default:
             return favorites;
     }
 
 }
+
+
+export const favoriteFromSlice = (state)=> state.favoriteRecipe; 
